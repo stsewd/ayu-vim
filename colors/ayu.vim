@@ -217,12 +217,13 @@ call s:hi('typescriptParens', 'fg', '')
 
 " TreeSitter:" {{{
 call s:hi('TSInclude', 'accent', '')
-call s:hi('TSParameter', 'fg', '')
+call s:hi('TSParameter', 'entity', '')
 call s:hi('TSField', 'tag', '')
 call s:hi('TSAttribute', 'markup', '')
 call s:hi('TSVariableBuiltin', 'tag', '', 'italic')
 call s:hi('TSConstBuiltin', 'constant', '')
 call s:hi('TSStringRegex', 'regexp', '')
+call s:hi('TSPunctDelimiter', 'accent', '')
 " }}}
 
 " Fugitive:" {{{
