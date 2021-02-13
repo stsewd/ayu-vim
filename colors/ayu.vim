@@ -42,6 +42,7 @@ call ayu#hi('Pmenu', 'fg', 'selection_inactive')
 call ayu#hi('PmenuSel', 'fg', 'selection_inactive', 'reverse')
 call ayu#hi('Question', 'string', '')
 call ayu#hi('Search', 'bg', 'constant')
+call ayu#hi('Incsearch', '', 'vcs_modified')
 call ayu#hi('SpecialKey', 'selection_inactive', '')
 call ayu#hi('SpellCap', 'tag', '', 'underline')
 call ayu#hi('SpellLocal', 'keyword', '', 'underline')
@@ -201,12 +202,13 @@ call ayu#hi('typescriptParens', 'fg', '')
 
 " TreeSitter:" {{{
 call ayu#hi('TSInclude', 'accent', '')
-call ayu#hi('TSParameter', 'fg', '')
+call ayu#hi('TSParameter', 'identity', '')
 call ayu#hi('TSField', 'tag', '')
 call ayu#hi('TSAttribute', 'markup', '')
 call ayu#hi('TSVariableBuiltin', 'tag', '', 'italic')
 call ayu#hi('TSConstBuiltin', 'constant', '')
 call ayu#hi('TSStringRegex', 'regexp', '')
+call ayu#hi('TSPunctDelimiter', 'accent', '')
 " }}}
 
 " Fugitive:" {{{
@@ -221,10 +223,6 @@ call ayu#hi('gitcommitBranch', 'func', '')
 call ayu#hi('gitcommitHeader', 'accent', '')
 call ayu#hi('gitcommitSummary', 'fg', '')
 call ayu#hi('gitcommitOverflow', 'markup', '')
-" }}}
-
-" Startify:" {{{
-call ayu#hi('StartifyFile', 'fg', '')
 " }}}
 
 " Vim:" {{{
