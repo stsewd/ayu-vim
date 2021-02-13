@@ -202,7 +202,7 @@ call ayu#hi('typescriptParens', 'fg', '')
 
 " TreeSitter:" {{{
 call ayu#hi('TSInclude', 'accent', '')
-call ayu#hi('TSParameter', 'identity', '')
+call ayu#hi('TSParameter', 'entity', '')
 call ayu#hi('TSField', 'tag', '')
 call ayu#hi('TSAttribute', 'markup', '')
 call ayu#hi('TSVariableBuiltin', 'tag', '', 'italic')
