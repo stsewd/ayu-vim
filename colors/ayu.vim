@@ -20,6 +20,7 @@ endfunction
 " }}}
 
 " Vim Highlighting: (see :help highlight-groups)"{{{
+
 call ayu#hi('Normal', 'fg', 'bg')
 call ayu#hi('ColorColumn', '', 'line')
 call ayu#hi('CursorColumn', '', 'line')
@@ -57,10 +58,13 @@ call ayu#hi('TabLineSel', 'fg', 'bg')
 call ayu#hi('Title', 'keyword', '')
 call ayu#hi('Visual', '', 'selection_inactive')
 call ayu#hi('WarningMsg', 'warning', '')
+
 "}}}
 
 " Generic Syntax Highlighting: (see :help group-name)"{{{
+
 call ayu#hi('Comment', 'comment', '', s:ayu_italic_comment ? 'italic' : '')
+
 call ayu#hi('Constant', 'constant', '', '')
 call ayu#hi('String', 'string', '')
 
@@ -69,13 +73,15 @@ call ayu#hi('Function', 'func', '')
 
 call ayu#hi('Statement', 'keyword', '')
 call ayu#hi('Operator', 'operator', '')
+call ayu#hi('Exception', 'markup', '')
 
-call ayu#hi('PreProc', 'special', '')
+call ayu#hi('PreProc', 'accent', '')
 
 call ayu#hi('Type', 'entity', '')
 call ayu#hi('Structure', 'special', '')
 
-call ayu#hi('Special', 'special', '')
+call ayu#hi('Special', 'accent', '')
+call ayu#hi('Delimiter', 'special', '')
 
 call ayu#hi('Underlined', 'tag', '', 'underline')
 
@@ -91,9 +97,10 @@ call ayu#hi('qfLineNr', 'keyword', '')
 call ayu#hi('Conceal', 'comment', '')
 call ayu#hi('CursorLineConceal', 'guide_normal', 'line')
 
+"}}}
 
-" Terminal
-" ---------
+" Terminal: {{{
+
 if has("nvim")
   let g:terminal_color_0 =  ayu#get_color('bg')
   let g:terminal_color_1 =  ayu#get_color('markup')
@@ -123,7 +130,8 @@ else
   let g:terminal_ansi_colors += [ayu#get_color('tag'),     ayu#get_color('constant')]
   let g:terminal_ansi_colors += [ayu#get_color('regexp'),  ayu#get_color('comment')]
 endif
-"}}}
+
+" }}}
 
 " Diff Syntax Highlighting:"{{{
 call ayu#hi('DiffAdd', 'vcs_added', 'guide_normal')
@@ -182,6 +190,7 @@ call ayu#hi('LspDiagnosticsSignInformation', 'fg', s:sign_bg())
 " }}}
 
 " YATS:" {{{
+
 call ayu#hi('typescriptDecorator', 'markup', '')
 call ayu#hi('typescriptImport', 'accent', '')
 call ayu#hi('typescriptExport', 'accent', '')
@@ -197,18 +206,78 @@ call ayu#hi('typescriptRegexpString', 'regexp', '')
 call ayu#hi('typescriptTry', 'markup', '')
 call ayu#hi('typescriptExceptions', 'markup', '')
 call ayu#hi('typescriptDebugger', 'markup', '', 'bold')
-call ayu#hi('typescriptParens', 'fg', '')
+call ayu#hi('typescriptParens', 'special', '')
+"call ayu#hi('typescriptVariable', 'keyword', '')
+call ayu#hi('typescriptObjectLabel', 'tag', '')
+call ayu#hi('typescriptOperator', 'keyword', '')
+call ayu#hi('typescriptArrowFunc', 'operator', '')
+call ayu#hi('typescriptBraces', 'special', '')
+call ayu#hi('typescriptGlobal', 'accent', '')
+
+" Prop
+call ayu#hi('typescriptDOMFormProp', 'entity', '')
+call ayu#hi('typescriptDOMEventProp', 'entity', '')
+call ayu#hi('typescriptBOMWindowProp', 'accent', '')
+
+" Method
+call ayu#hi('typescriptDateMethod', 'func', '')
+call ayu#hi('typescriptBlobMethod', 'func', '')
+call ayu#hi('typescriptArrayMethod', 'func', '')
+call ayu#hi('typescriptArrayStaticMethod', 'func', '')
+call ayu#hi('typescriptStringMethod', 'func', '')
+call ayu#hi('typescriptPaymentMethod', 'func', '')
+call ayu#hi('typescriptHeadersMethod', 'func', '')
+call ayu#hi('typescriptCacheMethod', 'func', '')
+call ayu#hi('typescriptDOMEventMethod', 'func', '')
+call ayu#hi('typescriptDOMEventTargetMethod', 'func', '')
+call ayu#hi('typescriptBOMWindowMethod', 'func', '')
+call ayu#hi('typescriptDOMStorageMethod', 'func', '')
+call ayu#hi('typescriptPromiseMethod', 'func', '')
+call ayu#hi('typescriptGlobalMethod', 'func', '')
+call ayu#hi('typescriptFunctionMethod', 'func', '')
+call ayu#hi('typescriptBOMLocationMethod', 'func', '')
+
+" }}}
+
+" Javascript:" {{{
+
+call ayu#hi('jsNull', 'constant', '')
+call ayu#hi('jsThis', 'constant', '', 'italic')
+
+call ayu#hi('jsBrackets', 'special', '')
+call ayu#hi('jsDot', 'special', '')
+call ayu#hi('jsParens', 'special', '')
+call ayu#hi('jsFuncParens', 'special', '')
+call ayu#hi('jsFuncBraces', 'special', '')
+call ayu#hi('jsIfElseBraces', 'special', '')
+
+call ayu#hi('jsObjectKey', 'tag', '')
+call ayu#hi('jsObjectProp', 'tag', '')
+
+call ayu#hi('jsRegexpString', 'regexp', '')
+
 " }}}
 
 " TreeSitter:" {{{
+
 call ayu#hi('TSInclude', 'accent', '')
-call ayu#hi('TSParameter', 'entity', '')
+
+call ayu#hi('TSParameter', 'special', '')
+
 call ayu#hi('TSField', 'tag', '')
+call ayu#hi('TSProperty', 'tag', '')
+
 call ayu#hi('TSAttribute', 'markup', '')
-call ayu#hi('TSVariableBuiltin', 'tag', '', 'italic')
+
+call ayu#hi('TSVariableBuiltin', 'constant', '', 'italic')
 call ayu#hi('TSConstBuiltin', 'constant', '')
+
 call ayu#hi('TSStringRegex', 'regexp', '')
+
 call ayu#hi('TSPunctDelimiter', 'accent', '')
+
+call ayu#hi('TSFuncMacro', 'func', '')
+
 " }}}
 
 " Fugitive:" {{{
@@ -239,5 +308,50 @@ call ayu#hi('xmlTagName', 'keyword', '')
 call ayu#hi('xmlEntity', 'tag', '')
 call ayu#hi('xmlEntityPunct', 'operator', '')
 call ayu#hi('xmlEqual', 'operator', '')
+
+" }}}
+
+" INI:" {{{
+call ayu#hi('dosiniHeader', 'keyword', '')
+" }}}
+
+" Pandoc:" {{{
+
+call ayu#hi('pandocPipeTableHeader', 'keyword', '')
+call ayu#hi('pandocPipeTableDelims', 'keyword', '')
+call ayu#hi('pandocDelimitedCodeBlock', 'accent', '')
+
+" }}}
+
+" Shell:" {{{
+
+call ayu#hi('shTestOpr', 'operator', '')
+call ayu#hi('shOption', 'special', '')
+call ayu#hi('shQuote', 'string', '')
+
+" }}}
+
+" Haskell:" {{{
+
+call ayu#hi('haskellDeclKeyword', 'keyword', '')
+call ayu#hi('haskellLet', 'keyword', '')
+call ayu#hi('haskellWhere', 'keyword', '')
+call ayu#hi('haskellIdentifier', 'tag', '')
+
+" }}}
+
+" PHP:" {{{
+
+call ayu#hi('phpDefine', 'keyword', '')
+call ayu#hi('phpStructure', 'keyword', '')
+
+" }}}
+
+" Ruby:" {{{
+
+call ayu#hi('rubyModule', 'keyword', '')
+call ayu#hi('rubyRegexp', 'regexp', '')
+call ayu#hi('rubyRegexpDelimiter', 'regexp', '')
+call ayu#hi('rubyStringDelimiter', 'string', '')
 
 " }}}

@@ -52,7 +52,6 @@ let g:ayu#palette.warning = {'light': "#FA8D3E",  'mirage': "#FFA759",  'dark': 
 
 " }}}
 
-
 function! ayu#get_style()
     return &background ==# 'dark' ? get(g:, 'ayucolor', 'dark') : &background
 endfunction
