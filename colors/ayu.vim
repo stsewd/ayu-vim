@@ -276,8 +276,6 @@ call ayu#hi('TSStringRegex', 'regexp', '')
 
 call ayu#hi('TSPunctDelimiter', 'accent', '')
 
-call ayu#hi('TSFuncMacro', 'func', '')
-
 " }}}
 
 " Fugitive:" {{{
