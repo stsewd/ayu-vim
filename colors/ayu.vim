@@ -262,7 +262,7 @@ call ayu#hi('jsRegexpString', 'regexp', '')
 
 call ayu#hi('TSInclude', 'accent', '')
 
-call ayu#hi('TSParameter', 'special', '')
+call ayu#hi('TSParameter', 'entity', '')
 
 call ayu#hi('TSField', 'tag', '')
 call ayu#hi('TSProperty', 'tag', '')
